@@ -8,58 +8,98 @@ const mocks = [
   {
     request: {
       query: GET_REPOS,
-      variables: {
-        searchQuery: 'javascript',
-        first: 100,
-        after: null,
-      },
+      variables: { searchQuery: 'javascript-book', first: 10, after: null },
     },
     result: {
       data: {
-        search: {
-          edges: [
+        "search": {
+          "__typename": "SearchResultItemConnection",
+          "edges": [
             {
-              node: {
-                id: '1',
-                name: 'Repo1',
-                url: 'https://github.com/repo1',
-                stargazerCount: '10',
-                forkCount: '5',
-              },
+              "__typename": "SearchResultItemEdge",
+              "node": {
+                "__typename": "Repository",
+                "id": "MDEwOlJlcG9zaXRvcnkxNDQ0MDI3MA==",
+                "name": "You-Dont-Know-JS",
+                "stargazerCount": 174129,
+                "forkCount": 33416,
+                "url": "https://github.com/getify/You-Dont-Know-JS"
+              }
             },
             {
-              node: {
-                id: '2',
-                name: 'Repo2',
-                url: 'https://github.com/repo2',
-                stargazerCount: '20',
-                forkCount: '8',
-              },
+              "__typename": "SearchResultItemEdge",
+              "node": {
+                "__typename": "Repository",
+                "id": "MDEwOlJlcG9zaXRvcnk2ODAwMjE3",
+                "name": "jstutorial",
+                "stargazerCount": 5419,
+                "forkCount": 1358,
+                "url": "https://github.com/ruanyf/jstutorial"
+              }
+            },
+            {
+              "__typename": "SearchResultItemEdge",
+              "node": {
+                "__typename": "Repository",
+                "id": "MDEwOlJlcG9zaXRvcnk3NjI5MDA5MQ==",
+                "name": "thejsway",
+                "stargazerCount": 7839,
+                "forkCount": 843,
+                "url": "https://github.com/thejsway/thejsway"
+              }
+            },
+            {
+              "__typename": "SearchResultItemEdge",
+              "node": {
+                "__typename": "Repository",
+                "id": "MDEwOlJlcG9zaXRvcnkzMTkzNjYwMA==",
+                "name": "documentation",
+                "stargazerCount": 5751,
+                "forkCount": 557,
+                "url": "https://github.com/documentationjs/documentation"
+              }
+            },
+            {
+              "__typename": "SearchResultItemEdge",
+              "node": {
+                "__typename": "Repository",
+                "id": "MDEwOlJlcG9zaXRvcnkxMzIxNjM3MQ==",
+                "name": "Eloquent-JavaScript",
+                "stargazerCount": 2866,
+                "forkCount": 809,
+                "url": "https://github.com/marijnh/Eloquent-JavaScript"
+              }
             },
           ],
-        },
-      },
+          "pageInfo": {
+            "__typename": "PageInfo",
+            "endCursor": "Y3Vyc29yOjEw",
+            "startCursor": "Y3Vyc29yOjE=",
+            "hasNextPage": true,
+            "hasPreviousPage": false
+          },
+          "repositoryCount": 7371
+        }
+      }
     },
   },
 ];
 
 describe('List', () => {
-  // TODO: Fix this test  - it is failing
-  
-  // it('renders the list of repositories', async () => {
-  //   render(
-  //     <MockedProvider mocks={mocks} addTypename={false}>
-  //       <List />
-  //     </MockedProvider>
-  //   );
+  it('renders a table with two elements', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <List />
+      </MockedProvider>
+    );
 
-  //   await waitFor(() => {
-  //     expect(screen.queryByText('Loading...')).toBeNull();
-  //   });
+    await waitFor(() => {
+      expect(screen.queryByText('Loading...')).toBeNull();
+    });
 
-  //   expect(screen.getByText('Repo1')).toBeInTheDocument();
-  //   expect(screen.getByText('Repo2')).toBeInTheDocument();
-  // });
+    expect(screen.getByText('documentation')).toBeInTheDocument();
+    expect(screen.getByText('Eloquent-JavaScript')).toBeInTheDocument();
+  });
 
   it('renders an error message when there is an error', async () => {
     const errorMock = {

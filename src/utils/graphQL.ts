@@ -19,6 +19,13 @@ export const GET_REPOS = gql`
           }
         }
       }
+      pageInfo {
+        endCursor
+        startCursor
+        hasNextPage
+        hasPreviousPage
+      }
+      repositoryCount
     }
   }
-`
+`;
