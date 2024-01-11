@@ -7,7 +7,7 @@ import App from './App.tsx'
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql', // GitHub GraphQL API endpoint
   headers: {
-    Authorization: `Bearer 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`, // Replace with your GitHub access token
+    Authorization: `Bearer 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`, // Replace with your GitHub access token
   },
   cache: new InMemoryCache(),
 })

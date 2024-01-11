@@ -1,11 +1,12 @@
 import React from 'react'
 import List from './components/list/list'
+import { Layout } from 'antd'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Layout>
       <List />
-    </div>
+    </Layout>
   )
 }
 

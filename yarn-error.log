@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add --dev @testincd /Users/radu.sadovei/Desktop/Development/Personal/react-github-repositoryg-library/jest-dom
+  /usr/local/bin/node /usr/local/bin/yarn add @apollo/client-auth --force
 
 PATH: 
   /Users/radu.sadovei/.rvm/gems/ruby-2.7.6/bin:/Users/radu.sadovei/.rvm/gems/ruby-2.7.6@global/bin:/Users/radu.sadovei/.rvm/rubies/ruby-2.7.6/bin:/usr/local/opt/openjdk@11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/radu.sadovei/.rvm/gems/ruby-2.7.6/bin:/Users/radu.sadovei/.rvm/gems/ruby-2.7.6@global/bin:/Users/radu.sadovei/.rvm/rubies/ruby-2.7.6/bin:/usr/local/opt/openjdk@11/bin:/Users/radu.sadovei/.rvm/bin:/Users/radu.sadovei/Library/Android/sdk/emulator:/Users/radu.sadovei/Library/Android/sdk/tools:/Users/radu.sadovei/Library/Android/sdk/tools/bin:/Users/radu.sadovei/Library/Android/sdk/platform-toolsexport:/Users/radu.sadovei/.rvm/bin:/Users/radu.sadovei/Library/Android/sdk/emulator:/Users/radu.sadovei/Library/Android/sdk/tools:/Users/radu.sadovei/Library/Android/sdk/tools/bin:/Users/radu.sadovei/Library/Android/sdk/platform-toolsexport
@@ -14,8 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@testincd: Request "https://registry.yarnpkg.com/@testincd" returned a 405
-      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66154:18)
+  Error: https://registry.yarnpkg.com/@apollo%2fclient-auth: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
       at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
       at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
@@ -53,7 +53,9 @@ npm manifest:
       "@babel/preset-typescript": "^7.23.3",
       "@testing-library/jest-dom": "^6.1.5",
       "@testing-library/react": "^14.1.2",
+      "@testing-library/user-event": "^14.5.2",
       "@types/jest": "^29.5.11",
+      "@types/lodash": "^4.14.202",
       "@types/react": "^18.2.43",
       "@types/react-dom": "^18.2.17",
       "@typescript-eslint/eslint-plugin": "^6.15.0",
@@ -1852,6 +1854,11 @@ Lockfile:
       "@testing-library/dom" "^9.0.0"
       "@types/react-dom" "^18.0.0"
   
+  "@testing-library/user-event@^14.5.2":
+    version "14.5.2"
+    resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.5.2.tgz#db7257d727c891905947bd1c1a99da20e03c2ebd"
+    integrity sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==
+  
   "@tootallnate/once@2":
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -1942,6 +1949,11 @@ Lockfile:
     version "7.0.15"
     resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
     integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
+  
+  "@types/lodash@^4.14.202":
+    version "4.14.202"
+    resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.202.tgz#f09dbd2fb082d507178b2f2a5c7e74bd72ff98f8"
+    integrity sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==
   
   "@types/node@*":
     version "20.10.5"

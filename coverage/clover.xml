@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1704971638301" clover="3.2.0">
+  <project timestamp="1704971638301" name="All files">
+    <metrics statements="54" coveredstatements="46" conditionals="17" coveredconditionals="14" methods="16" coveredmethods="12" elements="87" coveredelements="72" complexity="0" loc="54" ncloc="54" packages="3" files="3" classes="3"/>
+    <package name="src">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.tsx" path="/Users/radu.sadovei/Desktop/Development/Personal/react-github-repository/src/App.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.list">
+      <metrics statements="47" coveredstatements="39" conditionals="17" coveredconditionals="14" methods="15" coveredmethods="11"/>
+      <file name="list.tsx" path="/Users/radu.sadovei/Desktop/Development/Personal/react-github-repository/src/components/list/list.tsx">
+        <metrics statements="47" coveredstatements="39" conditionals="17" coveredconditionals="14" methods="15" coveredmethods="11"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="19" count="25" type="stmt"/>
+        <line num="25" count="25" type="stmt"/>
+        <line num="30" count="25" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="14" type="stmt"/>
+        <line num="37" count="14" type="stmt"/>
+        <line num="38" count="14" type="stmt"/>
+        <line num="39" count="14" type="stmt"/>
+        <line num="40" count="14" type="stmt"/>
+        <line num="41" count="14" type="stmt"/>
+        <line num="47" count="14" type="stmt"/>
+        <line num="51" count="14" type="stmt"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="7" type="stmt"/>
+        <line num="61" count="14" type="stmt"/>
+        <line num="62" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="71" count="14" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="74" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="85" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="114" count="14" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="118" count="14" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="135" count="75" type="stmt"/>
+        <line num="150" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.graphql">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="repositories.query.ts" path="/Users/radu.sadovei/Desktop/Development/Personal/react-github-repository/src/graphql/repositories.query.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

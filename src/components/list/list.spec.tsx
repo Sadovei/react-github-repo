@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import List from './list';
-import { GET_REPOS } from '../../utils/graphQL';
+import { GET_REPOS } from '../../graphql/repositories.query';
 import '@testing-library/jest-dom';
 
 const mocks = [
@@ -84,9 +84,43 @@ const mocks = [
     },
   },
 ];
+describe('List component', () => {
+  it('renders the input and button', () => {
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <List />
+      </MockedProvider>
+    );
 
-describe('List', () => {
-  it('renders a table with two elements', async () => {
+    expect(screen.getByPlaceholderText('Enter repository name...')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Clear' })).toBeInTheDocument();
+  });
+
+  it('updates the search term when input value changes', () => {
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <List />
+      </MockedProvider>
+    );
+
+    const input = screen.getByPlaceholderText('Enter repository name...') as HTMLInputElement;
+    const clearButton = screen.getByRole('button', { name: 'Clear' });
+
+    expect(input).toHaveValue('javascript-book');
+
+    // Change input value
+    input.value = 'react';
+    fireEvent.change(input);
+
+    expect(input).toHaveValue('react');
+
+    // Clear input value
+    fireEvent.click(clearButton);
+
+    expect(input).toHaveValue('');
+  });
+
+  it('fetches and renders the repository list', async () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <List />
@@ -101,6 +135,30 @@ describe('List', () => {
     expect(screen.getByText('Eloquent-JavaScript')).toBeInTheDocument();
   });
 
+  it('fetches more data when pagination changes', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <List />
+      </MockedProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.queryByText('Loading...')).toBeNull();
+    });
+
+    const parentElement = screen.getByTitle('Next Page');
+    const nextPageButton = parentElement.querySelector('.ant-pagination-item-link') as HTMLButtonElement;
+
+    fireEvent.click(nextPageButton);
+
+    await waitFor(() => {
+      expect(screen.queryByText('Loading...')).toBeNull();
+    });
+
+    expect(screen.getByText('You-Dont-Know-JS')).toBeInTheDocument();
+    expect(screen.getByText('jstutorial')).toBeInTheDocument();
+  });
+
   it('renders an error message when there is an error', async () => {
     const errorMock = {
       ...mocks[0],
@@ -113,12 +171,10 @@ describe('List', () => {
       </MockedProvider>
     );
 
-    // Wait for the loading state to finish
     await waitFor(() => {
       expect(screen.queryByText('Loading...')).toBeNull();
     });
 
-    // Check if the error message is rendered
     expect(screen.getByText('Error: GraphQL Error')).toBeInTheDocument();
   });
 });

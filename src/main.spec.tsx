@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import App from './App.tsx';
 import { MockedProvider } from '@apollo/client/testing';
-import { GET_REPOS } from './utils/graphQL.ts';
+import { GET_REPOS } from './graphql/repositories.query.ts';
 
 const mocks = [
   {
